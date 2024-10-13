@@ -1,0 +1,56 @@
+using System;
+
+public class Stack
+{
+    int position = 0;
+    object[] data = new object[10]; // Array to store stack elements
+
+    public void Push(object obj) // Add an object to the stack
+    {
+        data[position++] = obj;
+    }
+
+    public object Pop() // Remove and return the last object from the stack
+    {
+        return data[--position];
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // Create a new Stack
+        Stack stack = new Stack();
+
+        // Push a string, int, and double to the stack (Boxing)
+        stack.Push("Hello!");  // No boxing (reference type)
+        stack.Push(100);       // Boxing (value type)
+        stack.Push(9.99);      // Boxing (value type)
+
+        // Pop the items and unbox them
+        double poppedDouble = (double)stack.Pop();  // Unboxing
+        Console.WriteLine("Popped double: " + poppedDouble);
+
+        int poppedInt = (int)stack.Pop();           // Unboxing
+        Console.WriteLine("Popped int: " + poppedInt);
+
+        string poppedString = (string)stack.Pop();  // No unboxing needed
+        Console.WriteLine("Popped string: " + poppedString);
+
+        // Demonstrate ToString override
+        Animal animal = new Animal { Name = "Giraffe" }; // Set Name to "Giraffe"
+        Console.WriteLine(animal.ToString()); // Outputs: Giraffe
+    }
+}
+
+// Simple class with a ToString override
+public class Animal
+{
+    public string Name;
+
+    public override string ToString() // Override ToString to return the Name
+    {
+        return Name;
+    }
+}
