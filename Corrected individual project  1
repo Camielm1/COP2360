@@ -1,0 +1,196 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Problem 1: Valid input - 20 and 4
+        Console.WriteLine("Problem 1:");
+        Console.WriteLine("Enter the first number: 20");
+        Console.WriteLine("Enter the second number: 4");
+        try
+        {
+            int num1 = 20; // Simulating user input as 20
+            int num2 = 4;  // Simulating user input as 4
+            int result = Divide(num1, num2);
+            Console.WriteLine($"The result of {num1} / {num2} is: {result}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Please enter valid numeric values.");
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("Error: Cannot divide by zero.");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Error: The number you entered is too large or too small.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+
+        Console.WriteLine();
+
+        // Problem 2: Valid input - 50 and 5
+        Console.WriteLine("Problem 2:");
+        Console.WriteLine("Enter the first number: 50");
+        Console.WriteLine("Enter the second number: 5");
+        try
+        {
+            int num1 = 50; // Simulating user input as 50
+            int num2 = 5;  // Simulating user input as 5
+            int result = Divide(num1, num2);
+            Console.WriteLine($"The result of {num1} / {num2} is: {result}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Please enter valid numeric values.");
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("Error: Cannot divide by zero.");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Error: The number you entered is too large or too small.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+
+        Console.WriteLine();
+
+        // Problem 3: Invalid format - "one" and 2
+        Console.WriteLine("Problem 3:");
+        Console.WriteLine("Enter the first number: one");
+        Console.WriteLine("Enter the second number: 2");
+        try
+        {
+            int num1 = Convert.ToInt32("one"); // Simulating invalid input
+            int num2 = 2;  // Simulating user input as 2
+            int result = Divide(num1, num2);
+            Console.WriteLine($"The result of {num1} / {num2} is: {result}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Please enter valid numeric values.");
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("Error: Cannot divide by zero.");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Error: The number you entered is too large or too small.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+
+        Console.WriteLine();
+
+        // Problem 4: Divide by zero - 30 and 0
+        Console.WriteLine("Problem 4:");
+        Console.WriteLine("Enter the first number: 30");
+        Console.WriteLine("Enter the second number: 0");
+        try
+        {
+            int num1 = 30; // Simulating user input as 30
+            int num2 = 0;  // Simulating user input as 0
+            int result = Divide(num1, num2);
+            Console.WriteLine($"The result of {num1} / {num2} is: {result}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Please enter valid numeric values.");
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("Error: Cannot divide by zero.");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Error: The number you entered is too large or too small.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+
+        Console.WriteLine();
+
+        // Problem 5: Overflow - large number (int.MaxValue + 1) and 1
+        Console.WriteLine("Problem 5:");
+        Console.WriteLine("Enter the first number: 2147483648");
+        Console.WriteLine("Enter the second number: 1");
+        try
+        {
+            long num1 = 2147483648L; // Using long to avoid overflow during assignment
+            int num2 = 1;
+            int result = Divide(Convert.ToInt32(num1), num2); // Intentionally causing overflow
+            Console.WriteLine($"The result of {num1} / {num2} is: {result}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Please enter valid numeric values.");
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("Error: Cannot divide by zero.");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Error: The number you entered is too large or too small.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+
+    // Method to perform division
+    static int Divide(int numerator, int denominator)
+    {
+        return numerator / denominator;
+    }
+}
+
+OUTPUT 
+
+Problem 1:
+Enter the first number: 20
+Enter the second number: 4
+The result of 20 / 4 is: 5
+
+Problem 2:
+Enter the first number: 50
+Enter the second number: 5
+The result of 50 / 5 is: 10
+
+Problem 3:
+Enter the first number: one
+Enter the second number: 2
+Error: Please enter valid numeric values.
+
+Problem 4:
+Enter the first number: 30
+Enter the second number: 0
+Error: Cannot divide by zero.
+
+Problem 5:
+Enter the first number: 2147483648
+Enter the second number: 1
+Error: The number you entered is too large or too small.
+Press any key to exit...
+Killed
+
+
+#lINK TO COMPILER: https://onlinegdb.com/iOXK1EV9x
